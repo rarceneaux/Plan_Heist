@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
+
 namespace Plan_Heist
 {
     class Program
@@ -10,13 +11,13 @@ namespace Plan_Heist
             {
                 Console.WriteLine("Plan you Robbery Big Pat");
 
-                List<Robber> robbers = new List<Robber>();
+                var robbers = new List<Robber>();
 
-                var bankDifficulty = new Bank();
+                var bankDifficulty =  new Bank();
 
                 while (true)
                 {
-                    Console.WriteLine("Please enter Robber Name");
+                    Console.WriteLine("Please enter robber Name");
                     var robberName = Console.ReadLine();
                     if (robberName == "") break;
 
@@ -33,33 +34,44 @@ namespace Plan_Heist
                         CourageFactor = robberCourageFactor
                     };
 
-                    robbers.Add(robber);
+                robbers.Add(robber);
                 }
 
                 var numOfMember = robbers.Count();
-                Console.WriteLine($"there are {numOfMember} members");
+                Console.WriteLine($"There are {numOfMember} members of the North Memphis Vice Lords.");
 
             //foreach (var robber in robbers)
             // {
             //    Console.WriteLine($"{robber.Name} has robbing skills of: {robber.SkillLevel} and courage factor of {robber.CourageFactor}");
             // }
 
+            //Create a random number between - 10 and 10 for the heist's luck value.
+            //Add this number to the bank's difficulty level.
+            //Before displaying the success or failure message, display a report that shows.
+            // The team's combined skill level
+            // The bank's difficulty level
+            var heistLuck = new Random().Next(-10, 10);
+
+            heistLuck += bankDifficulty.BankDifficulty;
+
             var sumOfMemberSkill = 0;
+            
 
             foreach(var robber in robbers)
             {
                 sumOfMemberSkill += robber.SkillLevel;
             }
+                Console.WriteLine($"The Vice Lords have a total robbing skill set of {sumOfMemberSkill}");
 
             if(sumOfMemberSkill >=  bankDifficulty.BankDifficulty)
             {
-                Console.WriteLine($"Randy is a bum");
+                Console.WriteLine($"Make the Hood Trap Again-Winning");
             }
             else
             {
-                Console.WriteLine($"Ray is going to jail for child support");
+                Console.WriteLine($"The Trap is over-Losing");
             }
             }
-        }
+    }
     }
 
