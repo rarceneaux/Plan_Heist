@@ -4,8 +4,8 @@ using System.Text;
 
 namespace Plan_Heist
 {
-    class Bank
+    public class Bank
     {
-        public int BankDifficulty => 100;
+        public int BankDifficulty { get; set; } = 100;
     }
 }
