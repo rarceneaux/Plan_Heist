@@ -9,7 +9,7 @@ namespace Plan_Heist
     {
             static void Main(string[] args)
             {
-                Console.WriteLine("Plan you Robbery Big Pat");
+                Console.WriteLine("Plan your Robbery Project Pat");
 
                 var robbers = new List<Robber>();
 
@@ -37,8 +37,12 @@ namespace Plan_Heist
                 robbers.Add(robber);
                 }
 
-                var numOfMember = robbers.Count();
-                Console.WriteLine($"There are {numOfMember} members of the North Memphis Vice Lords.");
+                Console.WriteLine("Please enter the # of trail runs this app should person");
+                var trailRuns = int.Parse(Console.ReadLine());
+
+
+            var numOfMember = robbers.Count();
+                Console.WriteLine($"There are {numOfMember} members of the North Memphis Vice Lords");
 
             //foreach (var robber in robbers)
             // {
@@ -62,6 +66,7 @@ namespace Plan_Heist
                 sumOfMemberSkill += robber.SkillLevel;
             }
                 Console.WriteLine($"The Vice Lords have a total robbing skill set of {sumOfMemberSkill}");
+                Console.WriteLine($"This robbery has a robbing difficulty of {bankDifficulty.BankDifficulty}");
 
             if(sumOfMemberSkill >=  bankDifficulty.BankDifficulty)
             {
@@ -71,6 +76,14 @@ namespace Plan_Heist
             {
                 Console.WriteLine($"The Trap is over-Losing");
             }
+
+
+            //Run the scenario multiple times.
+                //After the user enters the team information, prompt them to enter the number of trial runs the program should perform.
+                //Loop through the difficulty / skill level calculation based on the user-entered number of trial runs. Choose a new luck value each time.
+
+                //Console.WriteLine("Please enter the # of trail runs this app should person");
+                //var trailRuns = int.Parse(Console.ReadLine());
             }
     }
     }
