@@ -38,7 +38,11 @@ namespace Plan_Heist
             }
 
             Console.WriteLine("Please enter the # of trail runs this app should person");
-            var trailRuns = int.Parse(Console.ReadLine());
+            var trialRuns = int.Parse(Console.ReadLine());
+           for (int i = 0; i < trialRuns; i++)
+            {
+                RobTheBank(bankDifficulty, robbers);
+            }
 
 
             var numOfMember = robbers.Count();
@@ -54,18 +58,14 @@ namespace Plan_Heist
             //Before displaying the success or failure message, display a report that shows.
             // The team's combined skill level
             // The bank's difficulty level
-            //for (do it 5 times)
-           /* {
-                RobTheBank(bankDifficulty, robbers);
-            }*/
 
 
             //Run the scenario multiple times.
                 //After the user enters the team information, prompt them to enter the number of trial runs the program should perform.
                 //Loop through the difficulty and skill level calculation based on the user-entered number of trial runs. Choose a new luck value each time.
 
-                //Console.WriteLine("Please enter the # of trail runs this app should person");
-                //var trailRuns = int.Parse(Console.ReadLine());
+                Console.WriteLine("Please enter the # of trail runs this app should person");
+           
         }
 
         public static void RobTheBank(Bank bankDifficulty, List<Robber> robbers)
